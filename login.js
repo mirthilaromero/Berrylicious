@@ -19,8 +19,7 @@ boton.addEventListener("click", (e) => {
                 const usuarioValido = usuarios.find(
                     (usuario) => usuario.email === data.email
                 );
-                alert(`¡Hola ${usuarioValido.nombre}! te habíamos extrañado ;)`);
-                window.location.href = "index.html";
+                (Swal.fire(`¡Hola ${usuarioValido.nombre}! te habíamos extrañado ;)`)).then(function() {window.location.href = "index.html"})
             } else {
                 const errorDiv = document.getElementById("error-message");
                 errorDiv.innerHTML =
@@ -35,3 +34,4 @@ boton.addEventListener("click", (e) => {
             );
         });
 });
+

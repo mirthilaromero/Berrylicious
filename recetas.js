@@ -1,23 +1,57 @@
-let recetasData = [
-    {
-        id: '0001',
-        titulo: 'Pasta al Forno',
-        descripcion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis obcaecati quo eos. Ipsum nesciunt eius labore quod consequatur quos! Ducimus odit ipsa optio quae tempore. Voluptas expedita eligendi sapiente animi.',
-        imagen: 'images/pasta_al_forno.jpeg',
-        fecha: '29 Marzo',
-    },
-    {
-        id: '0002',
-        titulo: 'Bimbibap',
-        descripcion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis obcaecati quo eos. Ipsum nesciunt eius labore quod consequatur quos! Ducimus odit ipsa optio quae tempore. Voluptas expedita eligendi sapiente animi.',
-        imagen: 'images/bibimbap.jpeg',
-        fecha: '31 marzo',
-    },
-    {
-        id: '0003',
-        titulo: 'Ensalada Griega',
-        descripcion: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis obcaecati quo eos. Ipsum nesciunt eius labore quod consequatur quos! Ducimus odit ipsa optio quae tempore. Voluptas expedita eligendi sapiente animi.',
-        imagen: 'images/ensalada_griega.jpeg',
-        fecha: '1 Abril'
-    },
-]
+let recetas = [];
+
+const storedRecetas = localStorage.getItem("recetas");
+if (storedRecetas) {
+  recetas = JSON.parse(storedRecetas);
+}
+
+const titulo = document.getElementById("titulo");
+const descripcion = document.getElementById("descripcion");
+// const imagen = document.getElementById("imagen");
+const addItem = document.querySelector(".addItem");
+const recetasContainer = document.getElementById("recetasContainer");
+
+addItem.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const textTitulo = titulo.value;
+  const textDescripcion = descripcion.value;
+  // const fileImagen = imagen.file[0];
+
+  const newItem = {
+    titulo: textTitulo,
+    descripcion: textDescripcion,
+    // imagen: fileImagen.name,
+  };
+
+  recetas.push(newItem);
+  localStorage.setItem("recetas", JSON.stringify(recetas));
+
+  console.log(recetas);
+
+  titulo.value = "";
+  descripcion.value = "";
+  // imagen.value = null;
+
+  renderRecetas();
+});
+
+function renderRecetas() {
+  recetasContainer.innerHTML = "";
+
+  recetas.forEach((receta) => {
+    const recetaElement = document.createElement("div");
+    recetaElement.innerHTML = `
+    <div class="blog-box">
+
+    <div class="blog-text">
+    <h3 class="blog-title">${receta.titulo}</h3>
+    <p>${receta.descripcion}</p>
+    </div>
+    </div>
+    `;
+    recetasContainer.appendChild(recetaElement);
+  });
+}
+
+renderRecetas();

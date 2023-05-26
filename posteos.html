@@ -18,30 +18,6 @@
 <body>
 
 
-	<!--<header>
-		<div class="header-container">
-			<div class="logo-container">
-				<img src="images/Berrylicious.png" alt="Logo" />
-			</div>
-			<form class="search-form">
-				<input type="text" placeholder="Receta" />
-				<button type="submit">Buscar</button>
-			</form>
-			<nav class="nav-container">
-				<ul>
-					<li><a href="#">Las más votadas</a></li>
-					<li><a href="#">Ketolicious</a></li>
-					<li><a href="#">Amamos el verde</a></li>
-					<li><a href="#">Mundialicious</a></li>
-				</ul>
-			</nav>
-		</div>
-
-
-
-		<div id="user-name"></div>
-	</header> -->
-
 	<header>
 		<div class="header-container">
 <div class="header-top">
@@ -59,8 +35,6 @@
     
 		</div>
 
-
-
 		<!-- <div id="user-name"></div><nav class="nav-container">
 				<ul>
 					<li><a href="#">Las más votadas</a></li>
@@ -73,30 +47,28 @@
 
 	<section id="blog">
 
-        <a href="posteos.html">Posteos</a>    
+		<a href="index.html">Regresar al Home</a>
 
-		<!-- <div class="blog-heading">
-			<span> Últimos posteos</span>
-		
-		</div> -->
+        <div id="recetasContainer"></div>
 
-
-
-		<!-- No borrar este div -->
-		<div class="recetas" id="recetas">
-
-
-		</div>
-		
-
+		<div class="recetas-nuevas">
+            <form>
+                <label for="titulo">Titulo:</label>
+                <input type="text" id="titulo" required>
+                <br>
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" required></textarea>
+				<!-- <input type="image" id="imagen" required> -->
+                <br>
+                <button class="addItem">Agregar</button>
+              </form>
+        </div>
 
 
 	</section>
 
-
-
-	<script src="recetas2.js"></script>
-	<script src="script.js"></script> -->
+    <script src="./recetas.js"></script>
+    
 </body>
 
 

@@ -2,6 +2,15 @@
 
 En el presente proyecto desarrollaré un Blog de cocina el cual pretenderá que los usuario se registren y  suban sus recetas con imagenes y el resto de los usuarios lo comenten y valoren.
 
+Dado que este proyecto se pensó para ser escalable pertendo para la entrega final  llegar  hasta el regirtro de usuarios dado que la idea es seguir desarrollando el posteo de recetas en el siguiente curso de backend donde generaré una base de datos (NoSQL) que alimente los posteos de las recetas y asi desarrollar y alimentar el Nav y el buscador de recetas.
+
+ -----------------*Entrega Final*--------------------
+
+ En esta instancia del proyecto para las alertas las mejoré con la librería Sweet alert, los datos de suscripcion se siguen guardando en el local storage, y mantengo el JSON para validar el inicio de sesion de los usuarios.
+
+ También creé un nuevo simulador de posteo de recetas con un nuevo HTML y JS que se encarga de agregar los nuevos Item al local storage(esto es un simulador de posteo que será mejorado en el backend cuando se genere una base de Datos para la página). 
+
+ NOTA: Los elementos que se encuentran comentados en el HTML (buscador y Nav) igualmente  se trabajarán el backend en futuras entregas.
 
  -----------------*Tercera Pre-entrega*--------------------
 
